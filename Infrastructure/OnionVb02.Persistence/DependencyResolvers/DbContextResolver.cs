@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.Persistence.DependencyResolvers
 {
-    //ToDo: ContextResolving
+   
     public static class DbContextResolver
     {
         public static void AddDbContextService(this IServiceCollection services)

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.InnerInfrastructure.DependencyResolvers
 {
-    //Todo : Manager resolving
+
     public static class ManagerResolver
     {
         public static void AddManagerService(this IServiceCollection services)

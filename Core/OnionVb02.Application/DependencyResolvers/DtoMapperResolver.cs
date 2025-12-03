@@ -10,7 +10,7 @@ namespace OnionVb02.Application.DependencyResolvers
 {
     public static class DtoMapperResolver
     {
-        //Todo : AddDtoMapperService
+      
         public static void AddDtoMapperService(this IServiceCollection services)
         {
             services.AddAutoMapper(typeof(DtoMappingProfile));

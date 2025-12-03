@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.Persistence.DependencyResolvers
 {
-    //ToDo : Repository Resolving
+ 
     public static class RepositoryResolver
     {
         public static void AddRepositoryService(this IServiceCollection services)
