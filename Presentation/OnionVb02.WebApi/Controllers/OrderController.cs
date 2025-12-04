@@ -3,10 +3,10 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnionVb02.Application.DTOClasses;
 using OnionVb02.Application.ManagerInterfaces;
-using Project.OnionVb02.Models.RequestModels.Categories;
-using Project.OnionVb02.Models.RequestModels.Orders;
-using Project.OnionVb02.Models.ResponseModels.Orders;
-using Project.WebApi.Models.ResponseModels.Categories;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Orders;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.Orders;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Categories;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.Categories;
 
 namespace OnionVb02.WebApi.Controllers
 {

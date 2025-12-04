@@ -4,12 +4,12 @@ using Microsoft.AspNetCore.Mvc;
 using OnionVb02.Application.DTOClasses;
 using OnionVb02.Application.ManagerInterfaces;
 using OnionVb02.InnerInfrastructure.ManagerConcretes;
-using Project.OnionVb02.Models.RequestModels.Categories;
-using Project.OnionVb02.Models.RequestModels.Orders;
-using Project.OnionVb02.Models.RequestModels.Products;
-using Project.OnionVb02.Models.ResponseModels.Orders;
-using Project.OnionVb02.Models.ResponseModels.Products;
-using Project.WebApi.Models.ResponseModels.Categories;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Products;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.Products;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Categories;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Orders;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.Orders;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.Categories;
 
 namespace OnionVb02.WebApi.Controllers
 {

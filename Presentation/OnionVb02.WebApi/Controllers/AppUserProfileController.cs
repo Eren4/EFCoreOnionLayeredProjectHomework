@@ -5,9 +5,9 @@ using OnionVb02.Application.DTOClasses;
 using OnionVb02.Application.ManagerInterfaces;
 using OnionVb02.Domain.Entities;
 using OnionVb02.InnerInfrastructure.ManagerConcretes;
-using Project.OnionVb02.Models.RequestModels.AppUserProfiles;
-using Project.OnionVb02.Models.RequestModels.Categories;
-using Project.OnionVb02.Models.ResponseModels.AppUserProfiles;
+using OnionVb02.ValidatorStructure.Models.RequestModels.AppUserProfiles;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.AppUserProfiles;
+using OnionVb02.ValidatorStructure.Models.RequestModels.Categories;
 
 namespace OnionVb02.WebApi.Controllers
 {

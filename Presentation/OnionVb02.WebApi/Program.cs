@@ -1,11 +1,12 @@
 using OnionVb02.Application.DependencyResolvers;
 using OnionVb02.InnerInfrastructure.DependencyResolvers;
 using OnionVb02.Persistence.DependencyResolvers;
-using OnionVb02.WebApi.DependencyResolvers;
+using OnionVb02.ValidatorStructure.DependencyResolvers;
 using OnionVb02.Application.DependencyResolvers;
 using OnionVb02.ValidatorStructure;
 
 using FluentValidation.AspNetCore;
+using OnionVb02.ValidatorResolvers;
 
 
 var builder = WebApplication.CreateBuilder(args);
