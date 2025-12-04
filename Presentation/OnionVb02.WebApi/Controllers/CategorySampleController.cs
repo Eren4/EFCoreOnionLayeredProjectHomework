@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnionVb02.Application.CqrsAndMediatr.CQRS.Commands.CategoryCommands;
-using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify;
-using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Read;
+using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify.Categories;
+using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Read.Categories;
 using OnionVb02.Application.CqrsAndMediatr.CQRS.Queries.CategoryQueries;
 using OnionVb02.Application.CqrsAndMediatr.CQRS.Results.CategoryResults;
 

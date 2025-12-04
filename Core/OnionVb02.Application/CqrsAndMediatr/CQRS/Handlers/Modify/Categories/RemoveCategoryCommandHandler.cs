@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify
+namespace OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify.Categories
 {
     public class RemoveCategoryCommandHandler
     {

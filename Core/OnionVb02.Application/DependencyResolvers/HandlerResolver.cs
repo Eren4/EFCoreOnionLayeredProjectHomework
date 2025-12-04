@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
-using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify;
-using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Read;
+using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Modify.Categories;
+using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Read.Categories;
 using System;
 using System.Collections.Generic;
 using System.Linq;
