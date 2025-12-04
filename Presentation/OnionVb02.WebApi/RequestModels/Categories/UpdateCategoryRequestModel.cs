@@ -1,4 +1,4 @@
-﻿namespace OnionVb02.WebApi.RequestModels.Categories
+﻿namespace Project.OnionVb02.Models.RequestModels.Categories
 {
     public class UpdateCategoryRequestModel
     {

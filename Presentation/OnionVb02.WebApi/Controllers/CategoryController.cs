@@ -3,8 +3,8 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnionVb02.Application.DTOClasses;
 using OnionVb02.Application.ManagerInterfaces;
-using OnionVb02.WebApi.RequestModels.Categories;
-using OnionVb02.WebApi.ResponseModels.Categories;
+using Project.OnionVb02.Models.RequestModels.Categories;
+using Project.WebApi.Models.ResponseModels.Categories;
 
 namespace OnionVb02.WebApi.Controllers
 {
@@ -44,6 +44,26 @@ namespace OnionVb02.WebApi.Controllers
             return Ok("Veri eklendi");
         }
 
+        [HttpPut]
+        public async Task<IActionResult> UpdateCategory(UpdateCategoryRequestModel model)
+        {
+            CategoryDto category = _mapper.Map<CategoryDto>(model);
+            await _categoryManager.UpdateAsync(category);
+            return Ok("Veri güncelleme basarılıdır");
+        }
 
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PacifyCategory(int id)
+        {
+            string mesaj = await _categoryManager.SoftDeleteAsync(id);
+            return Ok(mesaj);
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> DeleteCategory(int id)
+        {
+            string mesaj = await _categoryManager.HardDeleteAsync(id);
+            return Ok(mesaj);
+        }
     }
 }

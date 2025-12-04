@@ -12,8 +12,8 @@ using OnionVb02.Persistence.ContextClasses;
 namespace OnionVb02.Persistence.Migrations
 {
     [DbContext(typeof(MyContext))]
-    [Migration("20251203115352_Mig1")]
-    partial class Mig1
+    [Migration("20251204171721_MyMigration")]
+    partial class MyMigration
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
