@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify
+namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUsers
 {
     public class CreateAppUserCommandHandler : IRequestHandler<CreateAppUserCommand>
     {

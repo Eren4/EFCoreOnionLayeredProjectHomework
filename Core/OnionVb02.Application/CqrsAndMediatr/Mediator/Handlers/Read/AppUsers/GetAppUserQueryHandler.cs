@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read
+namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read.AppUsers
 {
     public class GetAppUserQueryHandler : IRequestHandler<GetAppUserQuery, List<GetAppUserQueryResult>>
     {
