@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediatR;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Queries.AppUserProfileQueries;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Results.AppUserProfileResults;
 using OnionVb02.Contract.RepositoryInterfaces;
@@ -10,7 +11,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read.AppUserProfiles
 {
-    public class GetAppUserProfileByIdQueryHandler
+    public class GetAppUserProfileByIdQueryHandler : IRequestHandler<GetAppUserProfileByIdQuery, GetAppUserProfileByIdQueryResult>
     {
         private readonly IAppUserProfileRepository _repository;
 
@@ -19,7 +20,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read.AppUserPro
             _repository = repository;
         }
 
-        public async Task<GetAppUserProfileByIdQueryResult> Handle(GetAppUserProfileByIdQuery query)
+        public async Task<GetAppUserProfileByIdQueryResult> Handle(GetAppUserProfileByIdQuery query, CancellationToken cancellationToken)
         {
             AppUserProfile value = await _repository.GetByIdAsync(query.Id);
             return new GetAppUserProfileByIdQueryResult

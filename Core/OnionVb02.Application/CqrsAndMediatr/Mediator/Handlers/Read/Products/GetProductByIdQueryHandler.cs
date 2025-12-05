@@ -1,11 +1,12 @@
-﻿using OnionVb02.Application.CqrsAndMediatr.Mediator.Queries.ProductQueries;
+﻿using MediatR;
+using OnionVb02.Application.CqrsAndMediatr.Mediator.Queries.ProductQueries;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Results.ProductResults;
 using OnionVb02.Contract.RepositoryInterfaces;
 using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read.Products
 {
-    public class GetProductByIdQueryHandler
+    public class GetProductByIdQueryHandler : IRequestHandler<GetProductByIdQuery, GetProductByIdQueryResult>
     {
         private readonly IProductRepository _repository;
 
@@ -14,7 +15,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Read.Products
             _repository = repository;
         }
 
-        public async Task<GetProductByIdQueryResult> Handle(GetProductByIdQuery query)
+        public async Task<GetProductByIdQueryResult> Handle(GetProductByIdQuery query, CancellationToken cancellationToken)
         {
 
             Product value = await _repository.GetByIdAsync(query.Id);

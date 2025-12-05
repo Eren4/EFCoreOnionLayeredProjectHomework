@@ -8,6 +8,6 @@
 
 5 => Hata Yönetimi Sistemini Managerlariniza yazın (Yapıldı)
 
-6 => Command ve Result yapıları icin MappingProfiles sistemini yazın... (yapılıyor)
+6 => Command ve Result yapıları icin MappingProfiles sistemini yazın... (Yapıldı)
 
 7 => Sistemi CQRS üzerine Mediator patterni ile birlikte diger entityleri de kapsayacak sekilde genişletin..CommandHandler'larınızı ve Command sınıflarınızı da cevap döndürebilmeleri icin generic yapılara destek verecek hale getirin...

@@ -1,10 +1,11 @@
-﻿using OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.ProductCommands;
+﻿using MediatR;
+using OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.ProductCommands;
 using OnionVb02.Contract.RepositoryInterfaces;
 using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
 {
-    public class CreateProductCommandHandler
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand>
     {
         private readonly IProductRepository _repository;
 
@@ -13,7 +14,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
             _repository = repository;
         }
 
-        public async Task Handle(CreateProductCommand command)
+        public async Task Handle(CreateProductCommand command, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new Product
             {
