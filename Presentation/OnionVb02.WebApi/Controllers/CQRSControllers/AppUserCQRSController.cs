@@ -10,7 +10,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppUserSampleController : ControllerBase
+    public class AppUserCQRSController : ControllerBase
     {
         private readonly GetAppUserQueryHandler _getAppUserQueryHandler;
         private readonly GetAppUserByIdQueryHandler _getAppUserByIdQueryHandler;
@@ -18,7 +18,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
         private readonly UpdateAppUserCommandHandler _updateAppUserCommandHandler;
         private readonly RemoveAppUserCommandHandler _removeAppUserCommandHandler;
 
-        public AppUserSampleController(GetAppUserQueryHandler getAppUserQueryHandler, GetAppUserByIdQueryHandler getAppUserByIdQueryHandler, CreateAppUserCommandHandler createAppUserCommandHandler, UpdateAppUserCommandHandler updateAppUserCommandHandler, RemoveAppUserCommandHandler removeAppUserCommandHandler)
+        public AppUserCQRSController(GetAppUserQueryHandler getAppUserQueryHandler, GetAppUserByIdQueryHandler getAppUserByIdQueryHandler, CreateAppUserCommandHandler createAppUserCommandHandler, UpdateAppUserCommandHandler updateAppUserCommandHandler, RemoveAppUserCommandHandler removeAppUserCommandHandler)
         {
             _getAppUserQueryHandler = getAppUserQueryHandler;
             _getAppUserByIdQueryHandler = getAppUserByIdQueryHandler;

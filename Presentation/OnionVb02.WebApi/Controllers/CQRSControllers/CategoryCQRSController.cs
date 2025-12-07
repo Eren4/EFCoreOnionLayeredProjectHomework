@@ -10,7 +10,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CategorySampleController : ControllerBase
+    public class CategoryCQRSController : ControllerBase
     {
         private readonly GetCategoryQueryHandler _getCategoryQueryHandler;
         private readonly GetCategoryByIdQueryHandler _getCategoryByIdQueryHandler;
@@ -18,7 +18,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
         private readonly UpdateCategoryCommandHandler _updateCategoryCommandHandler;
         private readonly RemoveCategoryCommandHandler _removeCategoryCommandHandler;
 
-        public CategorySampleController(GetCategoryQueryHandler getCategoryQueryHandler, GetCategoryByIdQueryHandler getCategoryByIdQueryHandler, CreateCategoryCommandHandler createCategoryCommandHandler, UpdateCategoryCommandHandler updateCategoryCommandHandler, RemoveCategoryCommandHandler removeCategoryCommandHandler)
+        public CategoryCQRSController(GetCategoryQueryHandler getCategoryQueryHandler, GetCategoryByIdQueryHandler getCategoryByIdQueryHandler, CreateCategoryCommandHandler createCategoryCommandHandler, UpdateCategoryCommandHandler updateCategoryCommandHandler, RemoveCategoryCommandHandler removeCategoryCommandHandler)
         {
             _getCategoryQueryHandler = getCategoryQueryHandler;
             _getCategoryByIdQueryHandler = getCategoryByIdQueryHandler;

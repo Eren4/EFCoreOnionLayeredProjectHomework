@@ -9,7 +9,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class OrderSampleController : ControllerBase
+    public class OrderCQRSController : ControllerBase
     {
         private readonly GetOrderQueryHandler _getOrderQueryHandler;
         private readonly GetOrderByIdQueryHandler _getOrderByIdQueryHandler;
@@ -17,7 +17,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
         private readonly UpdateOrderCommandHandler _updateOrderCommandHandler;
         private readonly RemoveOrderCommandHandler _removeOrderCommandHandler;
 
-        public OrderSampleController(GetOrderQueryHandler getOrderQueryHandler, GetOrderByIdQueryHandler getOrderByIdQueryHandler, CreateOrderCommandHandler createOrderCommandHandler, UpdateOrderCommandHandler updateOrderCommandHandler, RemoveOrderCommandHandler removeOrderCommandHandler)
+        public OrderCQRSController(GetOrderQueryHandler getOrderQueryHandler, GetOrderByIdQueryHandler getOrderByIdQueryHandler, CreateOrderCommandHandler createOrderCommandHandler, UpdateOrderCommandHandler updateOrderCommandHandler, RemoveOrderCommandHandler removeOrderCommandHandler)
         {
             _getOrderQueryHandler = getOrderQueryHandler;
             _getOrderByIdQueryHandler = getOrderByIdQueryHandler;

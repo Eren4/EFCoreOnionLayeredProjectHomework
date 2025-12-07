@@ -9,7 +9,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class ProductSampleController : ControllerBase
+    public class ProductCQRSController : ControllerBase
     {
         private readonly GetProductQueryHandler _getProductQueryHandler;
         private readonly GetProductByIdQueryHandler _getProductByIdQueryHandler;
@@ -17,7 +17,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
         private readonly UpdateProductCommandHandler _updateProductCommandHandler;
         private readonly RemoveProductCommandHandler _removeProductCommandHandler;
 
-        public ProductSampleController(GetProductQueryHandler getProductQueryHandler, GetProductByIdQueryHandler getProductByIdQueryHandler, CreateProductCommandHandler createProductCommandHandler, UpdateProductCommandHandler updateProductCommandHandler, RemoveProductCommandHandler removeProductCommandHandler)
+        public ProductCQRSController(GetProductQueryHandler getProductQueryHandler, GetProductByIdQueryHandler getProductByIdQueryHandler, CreateProductCommandHandler createProductCommandHandler, UpdateProductCommandHandler updateProductCommandHandler, RemoveProductCommandHandler removeProductCommandHandler)
         {
             _getProductQueryHandler = getProductQueryHandler;
             _getProductByIdQueryHandler = getProductByIdQueryHandler;

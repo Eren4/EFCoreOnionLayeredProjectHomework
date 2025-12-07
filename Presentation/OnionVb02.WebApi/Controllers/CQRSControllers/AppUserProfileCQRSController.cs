@@ -9,7 +9,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class AppUserProfileSampleController : ControllerBase
+    public class AppUserProfileCQRSController : ControllerBase
     {
         private readonly GetAppUserProfileQueryHandler _getAppUserProfileQueryHandler;
         private readonly GetAppUserProfileByIdQueryHandler _getAppUserProfileByIdQueryHandler;
@@ -17,7 +17,7 @@ namespace OnionVb02.WebApi.Controllers.SampleControllers
         private readonly UpdateAppUserProfileCommandHandler _updateAppUserProfileCommandHandler;
         private readonly RemoveAppUserProfileCommandHandler _removeAppUserProfileCommandHandler;
 
-        public AppUserProfileSampleController(GetAppUserProfileQueryHandler getAppUserProfileQueryHandler, GetAppUserProfileByIdQueryHandler getAppUserProfileByIdQueryHandler, CreateAppUserProfileCommandHandler createAppUserProfileCommandHandler, UpdateAppUserProfileCommandHandler updateAppUserProfileCommandHandler, RemoveAppUserProfileCommandHandler removeAppUserProfileCommandHandler)
+        public AppUserProfileCQRSController(GetAppUserProfileQueryHandler getAppUserProfileQueryHandler, GetAppUserProfileByIdQueryHandler getAppUserProfileByIdQueryHandler, CreateAppUserProfileCommandHandler createAppUserProfileCommandHandler, UpdateAppUserProfileCommandHandler updateAppUserProfileCommandHandler, RemoveAppUserProfileCommandHandler removeAppUserProfileCommandHandler)
         {
             _getAppUserProfileQueryHandler = getAppUserProfileQueryHandler;
             _getAppUserProfileByIdQueryHandler = getAppUserProfileByIdQueryHandler;
