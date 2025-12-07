@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUsers
 {
-    public class RemoveAppUserCommandHandler : IRequestHandler<RemoveAppUserCommand>
+    public class RemoveAppUserCommandHandler : IRequestHandler<RemoveAppUserMediatorCommand>
     {
         private readonly IAppUserRepository _repository;
 
@@ -19,7 +19,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUsers
             _repository = repository;
         }
 
-        public async Task Handle(RemoveAppUserCommand request, CancellationToken cancellationToken)
+        public async Task Handle(RemoveAppUserMediatorCommand request, CancellationToken cancellationToken)
         {
             AppUser value = await _repository.GetByIdAsync(request.Id);
             await _repository.DeleteAsync(value);

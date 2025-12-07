@@ -7,8 +7,9 @@ using MediatR;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.OrderCommands
 {
-    public class CreateOrderCommand : IRequest
+    public class UpdateOrderMediatorCommand : IRequest
     {
+        public int Id { get; set; }
         public string ShippingAddress { get; set; }
         public int? AppUserId { get; set; }
     }

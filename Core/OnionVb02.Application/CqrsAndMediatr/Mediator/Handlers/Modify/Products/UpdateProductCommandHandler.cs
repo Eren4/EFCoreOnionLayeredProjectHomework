@@ -5,7 +5,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
 {
-    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductCommand>
+    public class UpdateProductCommandHandler : IRequestHandler<UpdateProductMediatorCommand>
     {
         private readonly IProductRepository _repository;
 
@@ -14,7 +14,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
             _repository = repository;
         }
 
-        public async Task Handle(UpdateProductCommand command, CancellationToken cancellationToken)
+        public async Task Handle(UpdateProductMediatorCommand command, CancellationToken cancellationToken)
         {
             Product value = await _repository.GetByIdAsync(command.Id);
 

@@ -7,7 +7,7 @@ using MediatR;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.ProductCommands
 {
-    public class UpdateProductCommand : IRequest
+    public class UpdateProductMediatorCommand : IRequest
     {
         public int Id { get; set; }
         public string ProductName { get; set; }

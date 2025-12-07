@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUsers
 {
-    public class UpdateAppUserCommandHandler : IRequestHandler<UpdateAppUserCommand>
+    public class UpdateAppUserCommandHandler : IRequestHandler<UpdateAppUserMediatorCommand>
     {
         private readonly IAppUserRepository _repository;
 
@@ -19,7 +19,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUsers
             _repository = repository;
         }
 
-        public async Task Handle(UpdateAppUserCommand request, CancellationToken cancellationToken)
+        public async Task Handle(UpdateAppUserMediatorCommand request, CancellationToken cancellationToken)
         {
             AppUser value = await _repository.GetByIdAsync(request.Id);
             value.UserName = request.UserName;

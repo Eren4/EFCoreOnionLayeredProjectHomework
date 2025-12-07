@@ -7,13 +7,10 @@ using MediatR;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.CategoryCommands
 {
-    public class RemoveCategoryCommand : IRequest
+    public class CreateCategoryMediatorCommand : IRequest
     {
-        public int Id { get; set; }
+        public string CategoryName { get; set; }
+        public string Description { get; set; }
 
-        public RemoveCategoryCommand(int id)
-        {
-            Id = id;
-        }
     }
 }

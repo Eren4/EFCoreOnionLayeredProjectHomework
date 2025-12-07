@@ -7,11 +7,11 @@ using MediatR;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.ProductCommands
 {
-    public class RemoveProductCommand : IRequest
+    public class RemoveProductMediatorCommand : IRequest
     {
         public int Id { get; set; }
 
-        public RemoveProductCommand(int id)
+        public RemoveProductMediatorCommand(int id)
         {
             Id = id;
         }

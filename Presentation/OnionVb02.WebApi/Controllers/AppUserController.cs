@@ -1,10 +1,15 @@
-﻿using MediatR;
+﻿using AutoMapper;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.AppUserCommands;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Queries.AppUserQueries;
 using OnionVb02.Application.CqrsAndMediatr.Mediator.Results.AppUserResults;
+using OnionVb02.Application.DTOClasses;
+using OnionVb02.Application.ManagerInterfaces;
 using OnionVb02.Domain.Entities;
+using OnionVb02.ValidatorStructure.Models.RequestModels.AppUsers;
+using OnionVb02.ValidatorStructure.Models.ResponseModels.AppUsers;
 
 namespace OnionVb02.WebApi.Controllers
 {
@@ -12,46 +17,57 @@ namespace OnionVb02.WebApi.Controllers
     [ApiController]
     public class AppUserController : ControllerBase
     {
-        private readonly IMediator _mediator;
+        private readonly IAppUserManager _AppUserManager;
+        private readonly IMapper _mapper;
 
-        public AppUserController(IMediator mediator)
+        public AppUserController(IAppUserManager AppUserManager, IMapper mapper)
         {
-            _mediator = mediator;
+            _AppUserManager = AppUserManager;
+            _mapper = mapper;
         }
 
         [HttpGet]
         public async Task<IActionResult> AppUserList()
         {
-            List<GetAppUserQueryResult> appUsers = await _mediator.Send(new GetAppUserQuery());
-            return Ok(appUsers);
+            List<AppUserDto> values = await _AppUserManager.GetAllAsync();
+            return Ok(_mapper.Map<List<AppUserResponseModel>>(values));
         }
 
         [HttpGet("{id}")]
         public async Task<IActionResult> GetAppUser(int id)
         {
-            GetAppUserByIdQueryResult value = await _mediator.Send(new GetAppUserByIdQuery(id));
-            return Ok(value);
+            AppUserDto value = await _AppUserManager.GetByIdAsync(id);
+            return Ok(_mapper.Map<AppUserResponseModel>(value));
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateAppUser(CreateAppUserCommand command)
+        public async Task<IActionResult> CreateAppUser(CreateAppUserRequestModel model)
         {
-            await _mediator.Send(command);
+            AppUserDto AppUser = _mapper.Map<AppUserDto>(model);
+            await _AppUserManager.CreateAsync(AppUser);
             return Ok("Veri eklendi");
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateAppUser(UpdateAppUserCommand command)
+        public async Task<IActionResult> UpdateAppUser(UpdateAppUserRequestModel model)
         {
-            await _mediator.Send(command);
-            return Ok("Veri güncellendi");
+            AppUserDto AppUser = _mapper.Map<AppUserDto>(model);
+            await _AppUserManager.UpdateAsync(AppUser);
+            return Ok("Veri güncelleme basarılıdır");
+        }
+
+        [HttpPut("{id}")]
+        public async Task<IActionResult> PacifyAppUser(int id)
+        {
+            string mesaj = await _AppUserManager.SoftDeleteAsync(id);
+            return Ok(mesaj);
         }
 
         [HttpDelete]
         public async Task<IActionResult> DeleteAppUser(int id)
         {
-            await _mediator.Send(new RemoveAppUserCommand(id));
-            return Ok("Veri Silindi");
+            string mesaj = await _AppUserManager.HardDeleteAsync(id);
+            return Ok(mesaj);
         }
     }
 }

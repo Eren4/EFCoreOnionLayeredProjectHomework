@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.AppUserCommands
 {
-    public class RemoveAppUserCommand : IRequest
+    public class RemoveAppUserMediatorCommand : IRequest
     {
         public int Id { get; set; }
 
-        public RemoveAppUserCommand(int id)
+        public RemoveAppUserMediatorCommand(int id)
         {
             Id = id;
         }

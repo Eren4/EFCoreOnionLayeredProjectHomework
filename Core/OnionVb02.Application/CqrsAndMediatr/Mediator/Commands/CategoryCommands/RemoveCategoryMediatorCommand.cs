@@ -5,13 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using MediatR;
 
-namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.OrderCommands
+namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.CategoryCommands
 {
-    public class RemoveOrderCommand : IRequest
+    public class RemoveCategoryMediatorCommand : IRequest
     {
         public int Id { get; set; }
 
-        public RemoveOrderCommand(int id)
+        public RemoveCategoryMediatorCommand(int id)
         {
             Id = id;
         }

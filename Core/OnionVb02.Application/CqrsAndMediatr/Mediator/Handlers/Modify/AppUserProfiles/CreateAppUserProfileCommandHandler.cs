@@ -10,7 +10,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUserProfiles
 {
-    public class CreateAppUserProfileCommandHandler : IRequestHandler<CreateAppUserProfileCommand>
+    public class CreateAppUserProfileCommandHandler : IRequestHandler<CreateAppUserProfileMediatorCommand>
     {
         private readonly IAppUserProfileRepository _repository;
 
@@ -19,7 +19,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.AppUserP
             _repository = repository;
         }
 
-        public async Task Handle(CreateAppUserProfileCommand command, CancellationToken cancellationToken)
+        public async Task Handle(CreateAppUserProfileMediatorCommand command, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new AppUserProfile
             {

@@ -7,13 +7,11 @@ using MediatR;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Commands.AppUserProfileCommands
 {
-    public class RemoveAppUserProfileCommand : IRequest
+    public class UpdateAppUserProfileMediatorCommand : IRequest
     {
         public int Id { get; set; }
-
-        public RemoveAppUserProfileCommand(int id)
-        {
-            Id = id;
-        }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public int AppUserId { get; set; }
     }
 }

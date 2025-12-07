@@ -5,7 +5,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Categories
 {
-    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryCommand>
+    public class CreateCategoryCommandHandler : IRequestHandler<CreateCategoryMediatorCommand>
     {
         private readonly ICategoryRepository _repository;
 
@@ -14,7 +14,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Categori
             _repository = repository;
         }
         
-        public async Task Handle(CreateCategoryCommand command, CancellationToken cancellationToken)
+        public async Task Handle(CreateCategoryMediatorCommand command, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new Category
             {

@@ -6,7 +6,7 @@ using OnionVb02.Application.CqrsAndMediatr.CQRS.Handlers.Read.Categories;
 using OnionVb02.Application.CqrsAndMediatr.CQRS.Queries.CategoryQueries;
 using OnionVb02.Application.CqrsAndMediatr.CQRS.Results.CategoryResults;
 
-namespace OnionVb02.WebApi.Controllers
+namespace OnionVb02.WebApi.Controllers.SampleControllers
 {
     [Route("api/[controller]")]
     [ApiController]

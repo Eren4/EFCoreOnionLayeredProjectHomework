@@ -5,7 +5,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
 {
-    public class CreateProductCommandHandler : IRequestHandler<CreateProductCommand>
+    public class CreateProductCommandHandler : IRequestHandler<CreateProductMediatorCommand>
     {
         private readonly IProductRepository _repository;
 
@@ -14,7 +14,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
             _repository = repository;
         }
 
-        public async Task Handle(CreateProductCommand command, CancellationToken cancellationToken)
+        public async Task Handle(CreateProductMediatorCommand command, CancellationToken cancellationToken)
         {
             await _repository.CreateAsync(new Product
             {

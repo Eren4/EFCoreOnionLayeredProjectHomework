@@ -5,7 +5,7 @@ using OnionVb02.Domain.Entities;
 
 namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
 {
-    public class RemoveProductCommandHandler : IRequestHandler<RemoveProductCommand>
+    public class RemoveProductCommandHandler : IRequestHandler<RemoveProductMediatorCommand>
     {
         private readonly IProductRepository _repository;
 
@@ -14,7 +14,7 @@ namespace OnionVb02.Application.CqrsAndMediatr.Mediator.Handlers.Modify.Products
             _repository = repository;
         }
 
-        public async Task Handle(RemoveProductCommand command, CancellationToken cancellationToken)
+        public async Task Handle(RemoveProductMediatorCommand command, CancellationToken cancellationToken)
         {
             Product value = await _repository.GetByIdAsync(command.Id);
             await _repository.DeleteAsync(value);
